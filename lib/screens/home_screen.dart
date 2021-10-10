@@ -67,8 +67,10 @@ class HomeScreen extends StatelessWidget {
                     child: TextButton(
                         onPressed: () => {},
                         style: ButtonStyle(
-                          backgroundColor: MaterialStateProperty.all(
-                              Theme.of(context).cardColor),
+                            foregroundColor: MaterialStateProperty.all(themePrimaryColor),
+                            backgroundColor: MaterialStateProperty.all(
+                                Theme.of(context).cardColor),
+                            elevation: MaterialStateProperty.all(1)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -84,6 +86,7 @@ class HomeScreen extends StatelessWidget {
                           foregroundColor: MaterialStateProperty.all(themeYellow),
                           backgroundColor: MaterialStateProperty.all(
                               Theme.of(context).cardColor),
+                          elevation: MaterialStateProperty.all(1)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -99,6 +102,7 @@ class HomeScreen extends StatelessWidget {
                           foregroundColor: MaterialStateProperty.all(Colors.red),
                           backgroundColor: MaterialStateProperty.all(
                               Theme.of(context).cardColor),
+                          elevation: MaterialStateProperty.all(1)
                         ),
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
