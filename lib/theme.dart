@@ -56,7 +56,7 @@ ThemeData darkThemeData(BuildContext context) {
     ),
     textTheme: ThemeData.dark().textTheme.apply(
       fontFamily: 'Roboto Condensed',
-      bodyColor: contentColorDarkTheme
+      bodyColor: Colors.white
     ),
     primaryTextTheme: ThemeData.dark().textTheme.apply(
         fontFamily: 'Roboto Condensed'
