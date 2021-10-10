@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:hawkeye/theme.dart';
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.color, required this.cardChild, this.onTap, this.margin});
+  ReusableCard({required this.color, required this.cardChild, this.onTap, this.margin, this.height = 150});
 
   final Color color;
   final Widget cardChild;
   final EdgeInsetsGeometry? margin;
+  final double? height;
   final void Function()? onTap;
 
   @override
@@ -16,7 +17,7 @@ class ReusableCard extends StatelessWidget {
         splashColor: themePrimaryColor.withAlpha(30),
         onTap: onTap,
         child: SizedBox(
-          height: 150,
+          height: height,
           child: cardChild,
         ),
       ),
