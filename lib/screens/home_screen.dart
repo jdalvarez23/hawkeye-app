@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawkeye/components/reusable_card.dart';
 import 'package:hawkeye/screens/hero_image_screen.dart';
+import 'package:hawkeye/screens/video_screen.dart';
 import 'package:hawkeye/theme.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -9,6 +10,10 @@ class HomeScreen extends StatelessWidget {
   List<String> imageList = [
     'https://via.placeholder.com/100',
     'https://via.placeholder.com/150'
+  ];
+
+  List<String> videoList = [
+    'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4'
   ];
 
   @override
@@ -144,13 +149,13 @@ class HomeScreen extends StatelessWidget {
                                   return SizedBox(width: 10);
                                 },
                                 itemBuilder: (BuildContext context, int index) {
-                                  return Container(
-                                    height: 100,
-                                    width: 100,
-                                    child: GestureDetector(
-                                      onTap: () {
-                                        openHeroImage(context, Image.network(imageList[index]).image, index);
-                                      },
+                                  return InkWell(
+                                    onTap: () {
+                                      openHeroImage(context, Image.network(imageList[index]).image, index);
+                                    },
+                                    child: Container(
+                                      height: 100,
+                                      width: 100,
                                       child: Hero(
                                         tag: "photoImage" + index.toString(),
                                         child: FittedBox(
@@ -166,6 +171,76 @@ class HomeScreen extends StatelessWidget {
                             )
                           ],
                         )
+                      )),
+                ],
+              ),
+              // videos
+              Row(
+                children: [
+                  Expanded(
+                      child: ReusableCard(
+                          color: Colors.white,
+                          height: 150,
+                          margin: EdgeInsets.only(left: 15, right: 15),
+                          cardChild: Column(
+                            children: [
+                              ListTile(
+                                title: Text('Videos', style: TextStyle(color: Colors.grey),),
+                              ),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                height: 75,
+                                margin: EdgeInsets.only(left: 15, right: 15),
+                                child: ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  itemCount: videoList.length,
+                                  separatorBuilder: (BuildContext context, int index) {
+                                    return SizedBox(width: 10);
+                                  },
+                                  itemBuilder: (BuildContext context, int index) {
+                                    return Container(
+                                      height: 100,
+                                      width: 100,
+                                      child: GestureDetector(
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                  builder: (context) => VideoScreen(index: index, imageUrl: imageList[index],)
+                                                )
+                                            );
+                                          },
+                                          child: FittedBox(
+                                            fit: BoxFit.fill,
+                                            child: Stack(
+                                              alignment: Alignment.center,
+                                              children: [
+                                                Container(
+                                                  height: 100,
+                                                  width: 100,
+                                                  decoration: BoxDecoration(
+                                                      image: DecorationImage(
+                                                          image: NetworkImage(imageList[index]),
+                                                          fit: BoxFit.cover,
+                                                          colorFilter: ColorFilter.mode(
+                                                              Colors.black.withOpacity(1.0),
+                                                              BlendMode.softLight
+                                                          )
+                                                      )
+                                                  ),
+                                                ),
+                                                Icon(Icons.play_arrow, size: 50, color: Colors.white, ),
+                                              ],
+                                            ),
+                                          )
+                                      ),
+                                    );
+                                  },
+                                ),
+                              )
+                            ],
+                          )
                       )),
                 ],
               ),

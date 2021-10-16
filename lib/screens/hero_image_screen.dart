@@ -31,27 +31,21 @@ class HeroPhotoViewRouteWrapper extends StatelessWidget {
         heroAttributes: PhotoViewHeroAttributes(tag: tagName),
       ),
     );*/
-    return Stack(
-      children: [
-        Positioned.fill(child: PhotoView(
-          imageProvider: imageProvider,
-          backgroundDecoration: backgroundDecoration,
-          minScale: minScale,
-          maxScale: maxScale,
-          heroAttributes: PhotoViewHeroAttributes(tag: tagName),
-        ),),
-        Container(
-          margin: EdgeInsets.only(top: 25),
-          child: TextButton.icon(
-              style: TextButton.styleFrom(splashFactory: NoSplash.splashFactory),
-              icon: Icon(Icons.arrow_back, color: Colors.white,),
-              onPressed: () {
-                Navigator.pop(context);
-              },
-              label: Text('', style: TextStyle(color: Colors.white, fontSize: 20),)
-          ),
-        )
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+      ),
+      body: Stack(
+        children: [
+          Positioned.fill(child: PhotoView(
+            imageProvider: imageProvider,
+            backgroundDecoration: backgroundDecoration,
+            minScale: minScale,
+            maxScale: maxScale,
+            heroAttributes: PhotoViewHeroAttributes(tag: tagName),
+          ),),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.naxelo.hawkeye">
+   <uses-permission android:name="android.permission.INTERNET"/>
    <application
         android:label="hawkeye"
         android:icon="@mipmap/ic_launcher">

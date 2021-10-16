@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hawkeye/theme.dart';
 
 class ReusableCard extends StatelessWidget {
-  ReusableCard({required this.color, required this.cardChild, this.onTap, this.margin, this.height = 150});
+  ReusableCard({required this.color, required this.cardChild, this.onTap, this.margin = const EdgeInsets.all(15.0), this.height = 150});
 
   final Color color;
   final Widget cardChild;
@@ -21,7 +21,7 @@ class ReusableCard extends StatelessWidget {
           child: cardChild,
         ),
       ),
-      margin: EdgeInsets.all(15.0),
+      margin: margin,
     );
   }
 }
