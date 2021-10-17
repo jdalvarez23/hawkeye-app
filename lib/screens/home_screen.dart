@@ -31,96 +31,95 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                       child: ReusableCard(
-                          color: Colors.white,
-                          cardChild: Container(
-                            child: Row(
-                              // center row contents vertically
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              // center row contents horizontally
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                Container(
-                                  width: 12.5,
-                                  height: 12.5,
-                                  decoration: BoxDecoration(
-                                      color: Colors.green, shape: BoxShape.circle),
-                                ),
-                                Column(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      'SYSTEM',
-                                      style: TextStyle(
-                                        color: Colors.grey
-                                      ),
-                                    ),
-                                    Text(
-                                      'Disarmed',
-                                      style: TextStyle(fontSize: 24),
-                                    )
-                                  ],
-                                )
-                              ],
-                            ),
+                    color: Colors.white,
+                    cardChild: Container(
+                      child: Row(
+                        // center row contents vertically
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        // center row contents horizontally
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        children: [
+                          Container(
+                            width: 12.5,
+                            height: 12.5,
+                            decoration: BoxDecoration(
+                                color: Colors.green, shape: BoxShape.circle),
                           ),
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Text(
+                                'SYSTEM',
+                                style: TextStyle(color: Colors.grey),
+                              ),
+                              Text(
+                                'Disarmed',
+                                style: TextStyle(fontSize: 24),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                    ),
                   )),
                 ],
               ),
               // action buttons
               Container(
                 margin: EdgeInsets.only(left: 15, right: 15),
-                height: 75,
                 child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Container(
-                      width: 115,
+                      width: 100,
                       child: TextButton(
                           onPressed: () => {},
                           style: ButtonStyle(
-                              foregroundColor: MaterialStateProperty.all(themePrimaryColor),
+                              foregroundColor:
+                                  MaterialStateProperty.all(themePrimaryColor),
                               backgroundColor: MaterialStateProperty.all(
                                   Theme.of(context).cardColor),
-                              elevation: MaterialStateProperty.all(1)
-                          ),
+                              elevation: MaterialStateProperty.all(1)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [Icon(Icons.lock_open), Text('DISARM')],
-                          )
-                      ),
+                          )),
                     ),
                     Container(
-                      width: 115,
+                      width: 100,
                       child: TextButton(
                           onPressed: () => {},
                           style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all(themeYellow),
-                            backgroundColor: MaterialStateProperty.all(
-                                Theme.of(context).cardColor),
-                            elevation: MaterialStateProperty.all(1)
-                          ),
+                              foregroundColor:
+                                  MaterialStateProperty.all(themeYellow),
+                              backgroundColor: MaterialStateProperty.all(
+                                  Theme.of(context).cardColor),
+                              elevation: MaterialStateProperty.all(1)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Icon(Icons.lock_outline), Text('ARM (STAY)')],
-                          )
-                      ),
+                            children: [
+                              Icon(Icons.lock_outline),
+                              Text('ARM (STAY)')
+                            ],
+                          )),
                     ),
                     Container(
-                      width: 115,
+                      width: 100,
                       child: TextButton(
                           onPressed: () => {},
                           style: ButtonStyle(
-                            foregroundColor: MaterialStateProperty.all(Colors.red),
-                            backgroundColor: MaterialStateProperty.all(
-                                Theme.of(context).cardColor),
-                            elevation: MaterialStateProperty.all(1)
-                          ),
+                              foregroundColor:
+                                  MaterialStateProperty.all(Colors.red),
+                              backgroundColor: MaterialStateProperty.all(
+                                  Theme.of(context).cardColor),
+                              elevation: MaterialStateProperty.all(1)),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Icon(Icons.lock_outline), Text('ARM (AWAY)')],
-                          )
-                      ),
+                            children: [
+                              Icon(Icons.lock_outline),
+                              Text('ARM (AWAY)')
+                            ],
+                          )),
                     )
                   ],
                 ),
@@ -130,48 +129,62 @@ class HomeScreen extends StatelessWidget {
                 children: [
                   Expanded(
                       child: ReusableCard(
-                        color: Colors.white,
-                        height: 150,
-                        cardChild: Column(
-                          children: [
-                            ListTile(
-                              title: Text('Photos', style: TextStyle(color: Colors.grey),),
-                            ),
-                            Container(
-                              alignment: Alignment.centerLeft,
-                              height: 75,
-                              margin: EdgeInsets.only(left: 15, right: 15),
-                              child: ListView.separated(
-                                scrollDirection: Axis.horizontal,
-                                shrinkWrap: true,
-                                itemCount: imageList.length,
-                                separatorBuilder: (BuildContext context, int index) {
-                                  return SizedBox(width: 10);
-                                },
-                                itemBuilder: (BuildContext context, int index) {
-                                  return InkWell(
-                                    onTap: () {
-                                      openHeroImage(context, Image.network(imageList[index]).image, index);
-                                    },
-                                    child: Container(
-                                      height: 100,
-                                      width: 100,
-                                      child: Hero(
-                                        tag: "photoImage" + index.toString(),
-                                        child: FittedBox(
-                                          fit: BoxFit.fill,
-                                          child: Image.network(imageList[index], loadingBuilder: (_, child, chunk) =>
-                                          chunk != null ? const Text("loading") : child,),
-                                        ),
-                                      )
-                                    ),
-                                  );
-                                },
+                          color: Colors.white,
+                          height: 150,
+                          cardChild: Column(
+                            children: [
+                              ListTile(
+                                title: Text(
+                                  'Photos',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
                               ),
-                            )
-                          ],
-                        )
-                      )),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                height: 75,
+                                margin: EdgeInsets.only(left: 15, right: 15),
+                                child: ListView.separated(
+                                  scrollDirection: Axis.horizontal,
+                                  shrinkWrap: true,
+                                  itemCount: imageList.length,
+                                  separatorBuilder:
+                                      (BuildContext context, int index) {
+                                    return SizedBox(width: 10);
+                                  },
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
+                                    return InkWell(
+                                      onTap: () {
+                                        openHeroImage(
+                                            context,
+                                            Image.network(imageList[index])
+                                                .image,
+                                            index);
+                                      },
+                                      child: Container(
+                                          height: 100,
+                                          width: 100,
+                                          child: Hero(
+                                            tag:
+                                                "photoImage" + index.toString(),
+                                            child: FittedBox(
+                                              fit: BoxFit.fill,
+                                              child: Image.network(
+                                                imageList[index],
+                                                loadingBuilder: (_, child,
+                                                        chunk) =>
+                                                    chunk != null
+                                                        ? const Text("loading")
+                                                        : child,
+                                              ),
+                                            ),
+                                          )),
+                                    );
+                                  },
+                                ),
+                              )
+                            ],
+                          ))),
                 ],
               ),
               // videos
@@ -185,7 +198,10 @@ class HomeScreen extends StatelessWidget {
                           cardChild: Column(
                             children: [
                               ListTile(
-                                title: Text('Videos', style: TextStyle(color: Colors.grey),),
+                                title: Text(
+                                  'Videos',
+                                  style: TextStyle(color: Colors.grey),
+                                ),
                               ),
                               Container(
                                 alignment: Alignment.centerLeft,
@@ -195,10 +211,12 @@ class HomeScreen extends StatelessWidget {
                                   scrollDirection: Axis.horizontal,
                                   shrinkWrap: true,
                                   itemCount: videoList.length,
-                                  separatorBuilder: (BuildContext context, int index) {
+                                  separatorBuilder:
+                                      (BuildContext context, int index) {
                                     return SizedBox(width: 10);
                                   },
-                                  itemBuilder: (BuildContext context, int index) {
+                                  itemBuilder:
+                                      (BuildContext context, int index) {
                                     return Container(
                                       height: 100,
                                       width: 100,
@@ -207,9 +225,12 @@ class HomeScreen extends StatelessWidget {
                                             Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
-                                                  builder: (context) => VideoScreen(index: index, imageUrl: imageList[index],)
-                                                )
-                                            );
+                                                    builder: (context) =>
+                                                        VideoScreen(
+                                                          index: index,
+                                                          imageUrl:
+                                                              imageList[index],
+                                                        )));
                                           },
                                           child: FittedBox(
                                             fit: BoxFit.fill,
@@ -221,27 +242,32 @@ class HomeScreen extends StatelessWidget {
                                                   width: 100,
                                                   decoration: BoxDecoration(
                                                       image: DecorationImage(
-                                                          image: NetworkImage(imageList[index]),
+                                                          image: NetworkImage(
+                                                              imageList[index]),
                                                           fit: BoxFit.cover,
-                                                          colorFilter: ColorFilter.mode(
-                                                              Colors.black.withOpacity(1.0),
-                                                              BlendMode.softLight
-                                                          )
-                                                      )
-                                                  ),
+                                                          colorFilter:
+                                                              ColorFilter.mode(
+                                                                  Colors
+                                                                      .black
+                                                                      .withOpacity(
+                                                                          1.0),
+                                                                  BlendMode
+                                                                      .softLight))),
                                                 ),
-                                                Icon(Icons.play_arrow, size: 50, color: Colors.white, ),
+                                                Icon(
+                                                  Icons.play_arrow,
+                                                  size: 50,
+                                                  color: Colors.white,
+                                                ),
                                               ],
                                             ),
-                                          )
-                                      ),
+                                          )),
                                     );
                                   },
                                 ),
                               )
                             ],
-                          )
-                      )),
+                          ))),
                 ],
               ),
             ],
