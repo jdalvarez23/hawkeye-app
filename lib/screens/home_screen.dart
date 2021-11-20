@@ -151,32 +151,44 @@ class HomeScreen extends StatelessWidget {
                                   itemBuilder:
                                       (BuildContext context, int index) {
                                     return InkWell(
-                                      onTap: () {
-                                        openHeroImage(
-                                            context,
-                                            Image.network(imageList[index])
-                                                .image,
-                                            index);
-                                      },
-                                      child: Container(
+                                        onTap: () {
+                                          openHeroImage(
+                                              context,
+                                              Image.network(imageList[index])
+                                                  .image,
+                                              index);
+                                        },
+                                        child: Container(
                                           height: 100,
                                           width: 100,
-                                          child: Hero(
-                                            tag:
-                                                "photoImage" + index.toString(),
-                                            child: FittedBox(
-                                              fit: BoxFit.fill,
-                                              child: Image.network(
-                                                imageList[index],
-                                                loadingBuilder: (_, child,
-                                                        chunk) =>
-                                                    chunk != null
-                                                        ? const Text("loading")
-                                                        : child,
-                                              ),
+                                          child: FittedBox(
+                                            fit: BoxFit.fill,
+                                            child: Image.network(
+                                              imageList[index],
+                                              loadingBuilder: (_, child,
+                                                      chunk) =>
+                                                  chunk != null
+                                                      ? const Text("loading")
+                                                      : child,
                                             ),
-                                          )),
-                                    );
+                                          ),
+                                        )
+                                        // child: Hero(
+                                        //   tag:
+                                        //       "photoImage" + index.toString(),
+                                        //   child: FittedBox(
+                                        //     fit: BoxFit.fill,
+                                        //     child: Image.network(
+                                        //       imageList[index],
+                                        //       loadingBuilder: (_, child,
+                                        //               chunk) =>
+                                        //           chunk != null
+                                        //               ? const Text("loading")
+                                        //               : child,
+                                        //     ),
+                                        //   ),
+                                        // )),
+                                        );
                                   },
                                 ),
                               )

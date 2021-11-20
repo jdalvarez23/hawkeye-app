@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hawkeye/screens/home_screen.dart';
+import 'package:hawkeye/screens/activity_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -16,9 +17,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   // create a list of pages
-  List<Widget> pageList = [
-    HomeScreen()
-  ];
+  List<Widget> pageList = [HomeScreen(), ActivityScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -30,15 +29,12 @@ class _MainScreenState extends State<MainScreen> {
     // than having to individually change instances of widgets.
     return Scaffold(
       body: pageList[_selectedIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.view_list), label: 'Activity'),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
-        ],
-        currentIndex: _selectedIndex,
-        onTap: _onItemTapped
-      ),
+      bottomNavigationBar:
+          BottomNavigationBar(items: const <BottomNavigationBarItem>[
+        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+        BottomNavigationBarItem(icon: Icon(Icons.view_list), label: 'Activity'),
+        BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings')
+      ], currentIndex: _selectedIndex, onTap: _onItemTapped),
     );
   }
 }
