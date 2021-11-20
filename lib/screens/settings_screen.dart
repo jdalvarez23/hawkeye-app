@@ -30,7 +30,7 @@ class SettingsScreen extends StatelessWidget {
                   iosChevron: null,
                 ),
                 SettingsTile(
-                    title: 'Privacy Policy', leading: Icon(Icons.shield)),
+                    title: 'Privacy Policy', leading: Icon(Icons.privacy_tip)),
                 SettingsTile(
                     title: 'Terms of Service', leading: Icon(Icons.description))
               ],
