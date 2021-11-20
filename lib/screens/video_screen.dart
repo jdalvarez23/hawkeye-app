@@ -25,36 +25,35 @@ class _VideoScreenState extends State<VideoScreen> {
     super.initState();
     _controller = VideoPlayerController.network(
         'https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4');
-      // ..initialize().then((_) {
-      //   // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
-      //   setState(() {});
-      // });
+    // ..initialize().then((_) {
+    //   // Ensure the first frame is shown after the video is initialized, even before the play button has been pressed.
+    //   setState(() {});
+    // });
     // wrapper on top of the videoPlayerController
     _chewieController = ChewieController(
-      videoPlayerController: _controller,
-      aspectRatio: 16 / 9,
-      autoInitialize: true,
-      looping: false,
-      autoPlay: false,
-      errorBuilder: (context, errorMessage) {
-        return Center(
-          child: Text(
-            errorMessage,
-            style: TextStyle(color: Colors.white),
-          ),
-        );
-      }
-    );
+        videoPlayerController: _controller,
+        aspectRatio: 16 / 9,
+        autoInitialize: true,
+        looping: false,
+        autoPlay: true,
+        errorBuilder: (context, errorMessage) {
+          return Center(
+            child: Text(
+              errorMessage,
+              style: TextStyle(color: Colors.white),
+            ),
+          );
+        });
   }
 
   @override
   Widget build(BuildContext context) {
-    print(_controller.value.toString());
+    // print(_controller.value.toString());
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.transparent,
-        title: Text(_controller.value.toString()),
+        title: Text(_controller.dataSource.split('/').last),
       ),
       body: Center(
         child: Chewie(

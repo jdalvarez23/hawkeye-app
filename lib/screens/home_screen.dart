@@ -68,59 +68,56 @@ class HomeScreen extends StatelessWidget {
               Container(
                 margin: EdgeInsets.only(left: 15, right: 15),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Container(
-                      width: 100,
-                      child: TextButton(
-                          onPressed: () => {},
-                          style: ButtonStyle(
-                              foregroundColor:
-                                  MaterialStateProperty.all(themePrimaryColor),
-                              backgroundColor: MaterialStateProperty.all(
-                                  Theme.of(context).cardColor),
-                              elevation: MaterialStateProperty.all(1)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [Icon(Icons.lock_open), Text('DISARM')],
-                          )),
-                    ),
-                    Container(
-                      width: 100,
-                      child: TextButton(
-                          onPressed: () => {},
-                          style: ButtonStyle(
-                              foregroundColor:
-                                  MaterialStateProperty.all(themeYellow),
-                              backgroundColor: MaterialStateProperty.all(
-                                  Theme.of(context).cardColor),
-                              elevation: MaterialStateProperty.all(1)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.lock_outline),
-                              Text('ARM (STAY)')
-                            ],
-                          )),
-                    ),
-                    Container(
-                      width: 100,
-                      child: TextButton(
-                          onPressed: () => {},
-                          style: ButtonStyle(
-                              foregroundColor:
-                                  MaterialStateProperty.all(Colors.red),
-                              backgroundColor: MaterialStateProperty.all(
-                                  Theme.of(context).cardColor),
-                              elevation: MaterialStateProperty.all(1)),
-                          child: Column(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Icon(Icons.lock_outline),
-                              Text('ARM (AWAY)')
-                            ],
-                          )),
-                    )
+                    Expanded(
+                        child: TextButton(
+                            onPressed: () => {print("disarm button pressed")},
+                            style: ButtonStyle(
+                                foregroundColor: MaterialStateProperty.all(
+                                    themePrimaryColor),
+                                backgroundColor: MaterialStateProperty.all(
+                                    Theme.of(context).cardColor),
+                                elevation: MaterialStateProperty.all(1)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [Icon(Icons.lock_open), Text('DISARM')],
+                            ))),
+                    SizedBox(width: 15.0),
+                    Expanded(
+                        child: TextButton(
+                            onPressed: () =>
+                                {print("arm (stay) button pressed")},
+                            style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all(themeYellow),
+                                backgroundColor: MaterialStateProperty.all(
+                                    Theme.of(context).cardColor),
+                                elevation: MaterialStateProperty.all(1)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.lock_outline),
+                                Text('ARM (STAY)')
+                              ],
+                            ))),
+                    SizedBox(width: 15.0),
+                    Expanded(
+                        child: TextButton(
+                            onPressed: () =>
+                                {print("arm (away) button pressed")},
+                            style: ButtonStyle(
+                                foregroundColor:
+                                    MaterialStateProperty.all(Colors.red),
+                                backgroundColor: MaterialStateProperty.all(
+                                    Theme.of(context).cardColor),
+                                elevation: MaterialStateProperty.all(1)),
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Icon(Icons.lock_outline),
+                                Text('ARM (AWAY)')
+                              ],
+                            )))
                   ],
                 ),
               ),
