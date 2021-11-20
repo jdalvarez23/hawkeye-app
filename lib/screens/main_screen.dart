@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawkeye/screens/home_screen.dart';
 import 'package:hawkeye/screens/activity_screen.dart';
+import 'package:hawkeye/screens/settings_screen.dart';
 
 class MainScreen extends StatefulWidget {
   @override
@@ -17,7 +18,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 
   // create a list of pages
-  List<Widget> pageList = [HomeScreen(), ActivityScreen()];
+  List<Widget> pageList = [HomeScreen(), ActivityScreen(), SettingsScreen()];
 
   @override
   Widget build(BuildContext context) {

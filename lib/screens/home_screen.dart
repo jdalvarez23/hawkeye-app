@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hawkeye/components/reusable_card.dart';
-import 'package:hawkeye/screens/hero_image_screen.dart';
-import 'package:hawkeye/screens/video_screen.dart';
+import 'package:hawkeye/components/hero_image_screen.dart';
+import 'package:hawkeye/components/video_screen.dart';
 import 'package:hawkeye/theme.dart';
 
 class HomeScreen extends StatelessWidget {
