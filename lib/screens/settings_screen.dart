@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:hawkeye/theme.dart';
 import 'package:settings_ui/settings_ui.dart';
+import 'package:hawkeye/classes/ThemeState.dart';
 
-class SettingsScreen extends StatelessWidget {
-  SettingsScreen({Key? key}) : super(key: key);
+class SettingsScreen extends StatefulWidget {
+  @override
+  _SettingsScreenState createState() => _SettingsScreenState();
+}
+
+class _SettingsScreenState extends State<SettingsScreen> {
+  bool sendNotifications = true;
+  ThemeState themeMode = ThemeState.systemsDefault;
 
   @override
   Widget build(BuildContext context) {
@@ -13,6 +20,25 @@ class SettingsScreen extends StatelessWidget {
         ),
         body: SettingsList(
           sections: [
+            SettingsSection(title: 'PREFERENCES', tiles: [
+              SettingsTile.switchTile(
+                title: 'Notifications',
+                leading: Icon(Icons.notifications),
+                onToggle: (value) {
+                  print("notifications toggled: ${value}");
+                  setState(() {
+                    sendNotifications = value;
+                  });
+                },
+                switchValue: sendNotifications,
+                switchActiveColor: themePrimaryColor,
+              ),
+              SettingsTile(
+                title: 'Theme',
+                leading: Icon(Icons.dark_mode),
+                subtitle: ThemeHelper.getName(themeMode),
+              )
+            ]),
             SettingsSection(
               title: 'ACCOUNT',
               tiles: [
@@ -32,7 +58,10 @@ class SettingsScreen extends StatelessWidget {
                 SettingsTile(
                     title: 'Privacy Policy', leading: Icon(Icons.privacy_tip)),
                 SettingsTile(
-                    title: 'Terms of Service', leading: Icon(Icons.description))
+                    title: 'Terms of Service',
+                    leading: Icon(Icons.description)),
+                SettingsTile(
+                    title: 'Help and Support', leading: Icon(Icons.support))
               ],
             ),
             SettingsSection(tiles: [
@@ -43,6 +72,7 @@ class SettingsScreen extends StatelessWidget {
                   color: Colors.red,
                 ),
                 titleTextStyle: TextStyle(color: Colors.red),
+                iosChevron: null,
               ),
             ])
           ],

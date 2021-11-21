@@ -1,16 +1,23 @@
-# hawkeye
+# Hawkeye (Work in Progress)
 
-A new Flutter project.
+A mobile app that integrates with the Hawkeye security system.
 
-## Getting Started
+## About Hawkeye
 
-This project is a starting point for a Flutter application.
+A home security system using Raspberry Pi, camera, and door magnetic sensors to trigger alerts, record movements, and show security warnings on a Flutter mobile application.
 
-A few resources to get you started if this is your first Flutter project:
+Hawkeye uses the following technologies:
+- Google Flutter SDK
+- JSON WebTokens (JWTs)
+- Raspberry Pi
+- Magnetic Door Sensors
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Gallery
+Home Screen
+![Home Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/home.png?raw=true)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Activity Screen
+![Activity Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/activity.png?raw=true)
+
+Settings Screen
+![Settings Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/settings.png?raw=true)
