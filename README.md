@@ -18,9 +18,9 @@ Home Screen
 <img alt="Home Screen" title="Home Screen" src="https://github.com/jdalvarez23/hawkeye-app/blob/master/images/home.png" width="30%" />
 
 Activity Screen
-
-![Activity Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/activity.png)
+<br>
+<img alt="Home Screen" title="Home Screen" src="https://github.com/jdalvarez23/hawkeye-app/blob/master/images/activity.png" width="30%" />
 
 Settings Screen
-
-![Settings Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/settings.png)
+<br>
+<img alt="Home Screen" title="Home Screen" src="https://github.com/jdalvarez23/hawkeye-app/blob/master/images/settings.png" width="30%" />
