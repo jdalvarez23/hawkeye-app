@@ -14,8 +14,8 @@ Hawkeye uses the following technologies:
 
 ## Gallery
 Home Screen
-
-![Home Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/home.png)
+<br>
+<img alt="Home Screen" title="Home Screen" src="https://github.com/jdalvarez23/hawkeye-app/blob/master/images/home.png" width="30%" />
 
 Activity Screen
 
