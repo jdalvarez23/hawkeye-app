@@ -14,10 +14,13 @@ Hawkeye uses the following technologies:
 
 ## Gallery
 Home Screen
+
 ![Home Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/home.png)
 
 Activity Screen
+
 ![Activity Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/activity.png)
 
 Settings Screen
+
 ![Settings Screen](https://github.com/jdalvarez23/hawkeye-app/blob/master/images/settings.png)
